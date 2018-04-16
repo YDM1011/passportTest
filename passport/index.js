@@ -24,7 +24,7 @@ module.exports = (app , passport) => {
     passport.use(new FacebookStrategy({
             clientID: '1644388132319517',
             clientSecret: '4c5e3bdc2353eebf82cb743aa5e71b59',
-            callbackURL: "https://rocky-everglades-11458.herokuapp.com/auth/facebook/callback"
+            callbackURL: 'https://rocky-everglades-11458.herokuapp.com/auth/facebook/callback'
         },
         function(accessToken, refreshToken, profile, done) {
         console.log(profile);
