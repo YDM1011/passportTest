@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= page.title %></title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico#v1">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</head>
+<body>
+<header class="fluid head">
+    <div class="container">
+        <div class="logo">
+            <a href="/home">
+                <img src="/images/Logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="/users">таланти</a></li>
+                    <li><a href="#">проекти</a></li>
+                    <li><a href="#">публікації</a></li>
+                    <li><a href="#">робота</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="functions">
+            <div class="functions-item">
+                <select name="language" id="language">
+                    <option value="ua">укр</option>
+                    <option value="en">en</option>
+                </select>
+            </div>
+
+            <% if (!issession) {%>
+            <div class="functions-item">
+                <a href="/signin" class="functions-item-signin">вхід</a>
+            </div>
+            <div class="functions-item">
+                <a href="/signup" class="functions-item-signup">реєстрація</a>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</header>
+<% if (issession) {%>
+<div class="functions-item">
+    <a href="/profil/<%=session._id%>">Profil</a>
+</div>
+<div class="functions-item">
+    <form action="/logout" method="post">
+        <button>Logout</button>
+    </form>
+</div>
+<%}%>

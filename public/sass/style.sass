@@ -1,0 +1,84 @@
+$headColor: #2A2E34
+$headLink: #fff
+$hoveLinkColor: #FFD200
+*
+  font-family: "Segoe UI"
+a
+  transition: .5s
+body
+  padding-top: 54px
+  margin: 0
+.container
+  max-width: calc(1200px - 30px)
+  width: 100%
+  margin: 0 auto
+  padding: 10px 15px
+.head
+  background-color: $headColor
+  position: fixed
+  width: 100%
+  top: 0
+  & .container
+    display: flex
+    align-items: center
+    padding: 15px 15px
+  .logo
+    a
+      display: flex
+      align-items: center
+  .menu
+    ul
+      display: flex
+      align-items: center
+      margin: 0
+      padding-bottom: 1px
+      li
+        list-style: none
+        margin-left: 25px
+        &:first-child
+          margin-left: 0
+        a
+          color: $headLink
+          text-decoration: none
+          text-transform: uppercase
+          font-weight: 500
+          position: relative
+          &:after 
+            content: ""
+            display: block
+            height: 2px
+            position: absolute
+            width: 0
+            left: 50%
+            background-color: $hoveLinkColor
+            bottom: -17px
+            transition: .5s
+          &:hover:after
+            width: 100%
+            left: 0
+          &:hover
+            color: $hoveLinkColor
+  .functions
+    display: flex
+    align-items: center
+    margin-left: auto
+    padding-bottom: 1px
+    &-item
+      margin-left: 25px
+      &:first-child
+        margin-left: 0
+      a
+        color: $headLink
+        text-decoration: none
+        text-transform: uppercase
+      &-signup
+        border: 1px solid
+        padding: 3px 5px
+        border-radius: 5px
+        font-weight: 500
+.errorPage
+  display: flex
+  max-width: 100%
+  height: calc(100vh - 54px)
+  justify-content: center
+  align-items: center

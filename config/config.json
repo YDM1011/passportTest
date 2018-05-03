@@ -1,0 +1,46 @@
+{
+  "data": {
+    "db": "mongodb://ydm1011:adn45hrf@ds249249.mlab.com:49249/talents",
+    "port": "5000",
+    "email": {
+      "host": "smtp.mail.yahoo.com",
+      "port": 465,
+      "secure": true,
+      "user": "ydm101194@yahoo.com",
+      "pass": "adn45hrf",
+      "message": "Hello from Talants",
+      "link1": "https://talents-collection.herokuapp.com",
+      "link2": "/confirmMail/",
+      "link3": "/forgotMail/",
+      "link4": "/emailChangeConfirm/",
+      "subject": "Test"
+    },
+    "auth": {
+      "successRedirect": "/",
+      "failureRedirect": "/login"
+    },
+    "session": {
+      "secret": "seecretAdn45Hrz",
+      "resave": true,
+      "rolling": true,
+      "saveUninitialized": false,
+      "cookie": {
+        "secure": false,
+        "maxAge": 3600000
+      },
+      "cookieSave": {
+        "secure": true,
+        "maxAge": 3600000
+      },
+      "url": "mongodb://ydm1011:adn45hrf@ds249249.mlab.com:49249/talents",
+      "touchAfter": 86400
+    },
+    "facebook": {
+      "clientID": "1644388132319517",
+      "clientSecret": "4c5e3bdc2353eebf82cb743aa5e71b59",
+      "callbackURL": "https://talents-collection.herokuapp.com/auth/facebook/callback",
+      "profileFields": ["id", "displayName", "photos", "email", "profileUrl"]
+    },
+    "confirmTime": 600000
+  }
+}

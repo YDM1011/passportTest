@@ -1,0 +1,35 @@
+<% if (section.bild) {%>
+<div>
+    <%= section.bild %>
+    <nav id="menu" data-speed="1000">
+    <% section.data.forEach(function (item, i) {%>
+        <% item.anchor.putin.forEach(function (nm) {%>
+            <% if ("menu" == nm) {%>
+                <a href="<%= item.anchor.href %>"><%= item.anchor.name %></a>
+            <%}%>
+        <%})%>
+    <%}) %>
+    </nav>
+    <% section.data.forEach(function (item, i) {%>
+        <section id="<%= item.id %>">
+            <% if (item.id == "first") {%>
+                <% include first %>
+            <%}%>
+            <% if (item.id == "second") {%>
+                <% include second %>
+            <%}%>
+            <% if (item.id == "third") {%>
+                <% include second %>
+            <%}%>
+        </section>
+    <%}) %>
+    <% section.data.forEach(function (item, i) {%>
+    <p><span>title: </span><span><%= item.title %></span></p>
+    <p><span>id: </span><span><%= item.id %></span></p>
+    <p><span>anchor name: </span><span><%= item.anchor.name %></span></p>
+    <p><span>anchor href: </span><span><%= item.anchor.href %></span></p>
+    <p><span>anchor putin: </span><span><%= item.anchor.putin %></span></p>
+    <hr>
+    <%}) %>
+</div>
+<%}%>

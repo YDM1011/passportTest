@@ -1,0 +1,18 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/ws.js"></script>
+<script src="/javascripts/hash.js"></script>
+
+<!-- Only for section -->
+<script>
+    $(document).ready(function(){
+        $("#menu").on("click","a", function (event) {
+            // event.preventDefault();
+            var speed  = parseInt($("#menu").attr('data-speed'));
+            var id  = $(this).attr('href'),
+                top = $(id).offset().top;
+            $('body,html').animate({scrollTop: top}, speed);
+        });
+    });
+</script>
+</body>
+</html>
